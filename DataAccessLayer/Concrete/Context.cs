@@ -18,6 +18,6 @@ namespace DataAccessLayer.Concrete
         public DbSet<Heading> Headings { get; set; }   
         public DbSet<Writer> Writers { get; set; }   
 
-        //make sql connection on web.config line 16
+        //make sql connection on web.config line 19
     }
 }

@@ -5,16 +5,26 @@
 
 <h3> Mvc Kamp Tablo Örneği - Kategori</h3>
 
-<table class="table-hover">
+@*For using Bootstrap *@
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<table class="table table-bordered table-hover">
     <tr>
         <th>ID</th>
         <th>İsim</th>
         <th>Açıklama</th>
         <th>Durum</th>
+        <th>Güncelle</th>
     </tr>
     @*@foreach (var item in collection)
-    {
+        {
+            <tr>
 
-    }*@
+
+
+            <td><button class="btn btn-primary"> Yeni Kategori   </button> </td>
+            </tr>
+        }*@
 
 </table>
+<button class="btn btn-primary"> Yeni Kategori   </button>
