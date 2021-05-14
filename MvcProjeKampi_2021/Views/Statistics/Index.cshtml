@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>İstatistik Sayfası</h2>
+<br />
+<div class="total-content">
+    <div class="list_of_members">
+        <div class="accent-blue" style="background-color:#f1c40f">
+            <div class="icon-text">
+                <p>Max Kategori Sayısı </p>
+                <h3>
+                    @ViewBag.CatCount
+                </h3>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="new-users" style="background-color:#e67e22">
+
+            <div class="icon-text">
+                <p>Aktif-Pasif Kategori Farkı</p>
+                <h3>
+                    @ViewBag.CatCount
+                </h3>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="orders" style="background-color:#e74c3c">
+
+            <div class="icon-text">
+                <p>Max Başlık Kategorisi</p>
+                <h3>@ViewBag.KitapCount</h3>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="visitors" style="background-color:#95a5a6">
+            <div class="icon-text">
+                <p>İsminde 'A' olan Yaza Sayısı</p>
+                <h3>@ViewBag.WriterNameWithA</h3>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="visitors" style="background-color:aqua">
+            <div class="icon-text">
+                <p>En fazla yazı yazılan başlık </p>
+                <h3>@ViewBag.mostReapetedHeading</h3>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

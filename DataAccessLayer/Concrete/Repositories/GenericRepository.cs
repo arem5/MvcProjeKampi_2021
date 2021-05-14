@@ -26,10 +26,8 @@ namespace DataAccessLayer.Concrete.Repositories
             c.SaveChanges();
         }
 
-        public List<T> GetList()
-        {
-            return _object.ToList();
-        }
+        public List<T> GetList() => _object.ToList();
+
 
         public void Insert(T e)
         {
@@ -37,14 +35,16 @@ namespace DataAccessLayer.Concrete.Repositories
             c.SaveChanges();
         }
 
-        public List<T> GetList(Expression<Func<T, bool>> filter)
-        {
-            return _object.Where(filter).ToList();
-        }
+        public List<T> GetList(Expression<Func<T, bool>> filter) => _object.Where(filter).ToList();
+
 
         public void Update(T e)
         {
             c.SaveChanges();
         }
+
+        public T Get(Expression<Func<T, bool>> filter) => _object.SingleOrDefault(filter);
+        
+        
     }
 }

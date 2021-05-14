@@ -24,11 +24,19 @@ namespace BusinessLayer.Concrete
             _categoryDal.Insert(category);
         }
 
-        public List<Category> GetList()
+        public void CategoryDelete(Category category)
         {
-            return _categoryDal.GetList();
+            _categoryDal.Delete(category); //GenericRepository altındaki metot
         }
 
+        public void CategoryUpdate(Category category)
+        {
+            _categoryDal.Update(category);
+        }
+
+        public Category GetById(int id) => _categoryDal.Get(x => x.CategoryId == id);
+        
+        public List<Category> GetList() => _categoryDal.GetList();
 
     }
 }

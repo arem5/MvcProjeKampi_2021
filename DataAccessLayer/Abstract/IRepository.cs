@@ -14,6 +14,8 @@ namespace DataAccessLayer.Abstract
 
         void Insert(T e);
 
+        T Get(Expression<Func<T, bool>> filter);        //Tek değer döndürür
+
         void Update(T e);
 
         void Delete(T e);
