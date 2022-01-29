@@ -56,6 +56,7 @@
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
+    <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
@@ -67,7 +68,36 @@
     <Compile Include="EntityFramework\EFContactDal.cs" />
     <Compile Include="EntityFramework\EFContentDal.cs" />
     <Compile Include="EntityFramework\EFHeadingDal.cs" />
+    <Compile Include="EntityFramework\EFMessageDal.cs" />
     <Compile Include="EntityFramework\EFWriterDal.cs" />
+    <Compile Include="Migrations\202106101003346_mig_Writer_edit.cs" />
+    <Compile Include="Migrations\202106101003346_mig_Writer_edit.designer.cs">
+      <DependentUpon>202106101003346_mig_Writer_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106101052485_mig_Writer_edit_title.cs" />
+    <Compile Include="Migrations\202106101052485_mig_Writer_edit_title.designer.cs">
+      <DependentUpon>202106101052485_mig_Writer_edit_title.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109121058063_mig_writer_addstatus.cs" />
+    <Compile Include="Migrations\202109121058063_mig_writer_addstatus.designer.cs">
+      <DependentUpon>202109121058063_mig_writer_addstatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110280403048_mig_contentstatus.cs" />
+    <Compile Include="Migrations\202110280403048_mig_contentstatus.designer.cs">
+      <DependentUpon>202110280403048_mig_contentstatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110280407554_mig_headingstatus.cs" />
+    <Compile Include="Migrations\202110280407554_mig_headingstatus.designer.cs">
+      <DependentUpon>202110280407554_mig_headingstatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111101749264_migration_addMessageClass.cs" />
+    <Compile Include="Migrations\202111101749264_migration_addMessageClass.designer.cs">
+      <DependentUpon>202111101749264_migration_addMessageClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201291325035_migration_contactaddDate.cs" />
+    <Compile Include="Migrations\202201291325035_migration_contactaddDate.designer.cs">
+      <DependentUpon>202201291325035_migration_contactaddDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -81,7 +111,29 @@
       <Name>EntityLayer</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106101003346_mig_Writer_edit.resx">
+      <DependentUpon>202106101003346_mig_Writer_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106101052485_mig_Writer_edit_title.resx">
+      <DependentUpon>202106101052485_mig_Writer_edit_title.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109121058063_mig_writer_addstatus.resx">
+      <DependentUpon>202109121058063_mig_writer_addstatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110280403048_mig_contentstatus.resx">
+      <DependentUpon>202110280403048_mig_contentstatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110280407554_mig_headingstatus.resx">
+      <DependentUpon>202110280407554_mig_headingstatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111101749264_migration_addMessageClass.resx">
+      <DependentUpon>202111101749264_migration_addMessageClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201291325035_migration_contactaddDate.resx">
+      <DependentUpon>202201291325035_migration_contactaddDate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

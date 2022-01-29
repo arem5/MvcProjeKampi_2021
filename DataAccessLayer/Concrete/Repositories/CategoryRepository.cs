@@ -42,9 +42,7 @@ namespace DataAccessLayer.Concrete.Repositories
             c.SaveChanges();
         }
 
-        public Category Get(Expression<Func<Category, bool>> filter)
-        {
-            throw new NotImplementedException();
-        }
+        public Category Get(Expression<Func<Category, bool>> filter) =>
+            _object.Where(filter).FirstOrDefault();
     }
 }

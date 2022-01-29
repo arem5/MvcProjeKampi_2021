@@ -24,19 +24,14 @@ namespace BusinessLayer.Concrete
         public List<Writer> GetList() => _writerDal.GetList();
 
 
-        public void HeadingAddBL(Writer heading)
-        {
-            throw new NotImplementedException();
-        }
+        public void WriterAdd(Writer writer) =>  _writerDal.Insert(writer);
+        
 
-        public void HeadingDelete(Writer heading)
-        {
-            throw new NotImplementedException();
-        }
+        public void WriterDelete(Writer writer) =>     _writerDal.Delete(writer);
 
-        public void HeadingUpdate(Writer heading)
+        public void WriterUpdate(Writer writer)
         {
-            throw new NotImplementedException();
+            _writerDal.Update(writer);
         }
     }
 }

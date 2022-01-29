@@ -12,7 +12,7 @@ namespace BusinessLayer.Concrete
 {
     public class HeadingManager : IHeadingService
     {
-        IHeadingDal _headingDal;        
+        IHeadingDal _headingDal;        //
 
         public HeadingManager(IHeadingDal _headingDal)
         {
@@ -22,22 +22,15 @@ namespace BusinessLayer.Concrete
         public Heading GetById(int id) => _headingDal.Get(x => x.HeadingId == id);
 
 
-        public List<Heading> GetList()=> _headingDal.GetList();
+        public List<Heading> GetList() => _headingDal.GetList();
 
-        public void HeadingAddBL(Heading heading)
-        {
-            throw new NotImplementedException();
-        }
+        public void HeadingAddBL(Heading heading) => _headingDal.Insert(heading);
 
-        public void HeadingDelete(Heading heading)
-        {
-            throw new NotImplementedException();
-        }
 
-        public void HeadingUpdate(Heading heading)
-        {
-            throw new NotImplementedException();
-        }
+        public void HeadingDelete(Heading heading) => _headingDal.Update(heading);
+
+
+        public void HeadingUpdate(Heading heading) => _headingDal.Update(heading);
 
     }
 }
