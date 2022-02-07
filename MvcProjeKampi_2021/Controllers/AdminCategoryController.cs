@@ -21,6 +21,7 @@ namespace MvcProjeKampi_2021.Controllers
         //}
 
         // GET: AdminCategory
+        [Authorize(Roles ="B")]
         public ActionResult Index()
         {
             var categoryValues = cm.GetList();

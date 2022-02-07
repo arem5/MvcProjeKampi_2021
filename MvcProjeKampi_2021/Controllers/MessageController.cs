@@ -18,6 +18,7 @@ namespace MvcProjeKampi_2021.Controllers
         MessageValidator messageVal = new MessageValidator();
 
         // GET: Message
+        [Authorize]
         public ActionResult Inbox()
         {
             var messageList = mm.GetListInbox();
