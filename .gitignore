@@ -361,3 +361,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/MvcProjeKampi_2021/Controllers/WriterPanelController.cs
