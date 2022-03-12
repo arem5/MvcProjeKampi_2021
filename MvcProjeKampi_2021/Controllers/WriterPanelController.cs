@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
@@ -14,16 +15,20 @@ namespace MvcProjeKampi_2021.Controllers
         HeadingManager hm = new HeadingManager(new EFHeadingDal());
         CategoryManager cm = new CategoryManager(new EFCategoryDal());
 
+        Context c = new Context();
         // GET: WriterPanel
         public ActionResult WriterProfile()
         {
             return View();
         }
+        int sessionWriterId;
 
-
-        public ActionResult MyHeading()
+        public ActionResult MyHeading(string p)
         {
-            var values = hm.GetList();
+            p = (string)Session["WriterMail"];
+            sessionWriterId = c.Writers.Where(x => x.WriterMaile == p).Select(y => y.WriterID).FirstOrDefault();
+            var values = hm.GetList(sessionWriterId);
+
             return View(values);
         }
 
@@ -40,7 +45,9 @@ namespace MvcProjeKampi_2021.Controllers
         {
             h.HeadingDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             h.HeadingStatus = true;
-            h.WriterID = 3;
+            string p = (string)Session["WriterMail"];
+            sessionWriterId = c.Writers.Where(x => x.WriterMaile == p).Select(y => y.WriterID).FirstOrDefault();
+            h.WriterID = sessionWriterId;
             hm.HeadingAddBL(h);
             return RedirectToAction("MyHeading");
         }
@@ -56,6 +63,15 @@ namespace MvcProjeKampi_2021.Controllers
         public ActionResult EditHeading(Heading p)
         {
             hm.HeadingUpdate(p);
+            return RedirectToAction("MyHeading");
+        }
+
+
+        public ActionResult DeleteHeading(int id)
+        {
+            var headingValue = hm.GetById(id);
+            headingValue.HeadingStatus = false;
+            hm.HeadingDelete(headingValue);
             return RedirectToAction("MyHeading");
         }
 

@@ -18,9 +18,6 @@
         @Html.Label("Tarih")
         @Html.TextBoxFor(x => x.HeadingDate, new { @class = "form-control" })
         <br />
-        @Html.Label("Yazar Id")
-        @Html.TextBoxFor(x => x.WriterID, new { @class = "form-control" })
-        <br />
         @Html.Label("Kategori")
         @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
         <br />
