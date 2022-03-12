@@ -24,6 +24,9 @@ namespace BusinessLayer.Concrete
 
         public List<Heading> GetList() => _headingDal.GetList();
 
+        public List<Heading> GetList(int id) => _headingDal.GetList(x => x.WriterID == id);
+
+
         public void HeadingAddBL(Heading heading) => _headingDal.Insert(heading);
 
 
