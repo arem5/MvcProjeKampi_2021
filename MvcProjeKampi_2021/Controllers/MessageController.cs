@@ -21,12 +21,13 @@ namespace MvcProjeKampi_2021.Controllers
         [Authorize]
         public ActionResult Inbox()
         {
-            var messageList = mm.GetListInbox();
+            
+            var messageList = mm.GetListInbox("");
             return View(messageList);
         }
         public ActionResult Sendbox()
         {
-            var messageList = mm.GetListSendbox();
+            var messageList = mm.GetListSendbox("");
             return View(messageList);
         }
 

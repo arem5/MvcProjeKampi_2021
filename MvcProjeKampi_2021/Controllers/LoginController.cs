@@ -35,7 +35,6 @@ namespace MvcProjeKampi_2021.Controllers
             {
                 return RedirectToAction("Index");
             }
-            return View();
         }
 
         [HttpGet]

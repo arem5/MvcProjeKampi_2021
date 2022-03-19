@@ -2,6 +2,8 @@
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using PagedList;
+using PagedList.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,6 +54,8 @@ namespace MvcProjeKampi_2021.Controllers
             return RedirectToAction("MyHeading");
         }
 
+
+
         public ActionResult EditHeading(int id)
         {
             ViewBag.vlc = ValueCategory();
@@ -73,6 +77,12 @@ namespace MvcProjeKampi_2021.Controllers
             headingValue.HeadingStatus = false;
             hm.HeadingDelete(headingValue);
             return RedirectToAction("MyHeading");
+        }
+        
+        public ActionResult AllHeading(int page = 1)
+        {
+            var headingsAllValues = hm.GetList().ToPagedList(page, 7);
+            return View(headingsAllValues);
         }
 
 

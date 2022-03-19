@@ -21,12 +21,14 @@ namespace MvcProjeKampi_2021.Controllers
         
         public ActionResult Inbox()
         {
-            var messageList = mm.GetListInbox();
+            string mail = (string)Session["WriterMail"];
+            var messageList = mm.GetListInbox(mail);
             return View(messageList);
         }
         public ActionResult Sendbox()
         {
-            var messageList = mm.GetListSendbox();
+            string mail = (string)Session["WriterMail"];
+            var messageList = mm.GetListSendbox(mail);
             return View(messageList);
         }
 
@@ -56,7 +58,7 @@ namespace MvcProjeKampi_2021.Controllers
             if (results.IsValid)
             {
                 message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-                message.SenderMail = "session@mail.com";
+                message.SenderMail = (string)Session["WriterMail"];
                 mm.MessageAddBL(message);
                 return RedirectToAction("Sendbox");
             }

@@ -20,9 +20,9 @@ namespace BusinessLayer.Concrete
 
         public Message GetById(int id) => _messageDal.Get(x=>x.MessageId == id);
 
-        public List<Message> GetListInbox() => _messageDal.GetList(x => x.ReceiverMail == "admin@gmail.com");
+        public List<Message> GetListInbox(string mail) => _messageDal.GetList(x => x.ReceiverMail == mail);
 
-        public List<Message> GetListSendbox() => _messageDal.GetList(x => x.SenderMail == "admin@gmail.com");
+        public List<Message> GetListSendbox(string mail) => _messageDal.GetList(x => x.SenderMail == mail);
 
         public void MessageAddBL(Message message) => _messageDal.Insert(message);
 

@@ -40,7 +40,7 @@ namespace MvcProjeKampi_2021.Roles
         {
             Context c = new Context();
             var admin = c.Admins.FirstOrDefault(x => x.AdminUserName == username);
-            return new string[] { admin.AdminRole };
+            return new string[] { admin.AdminRole }; 
         }
 
         public override string[] GetUsersInRole(string roleName)
